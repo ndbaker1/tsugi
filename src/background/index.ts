@@ -1,4 +1,4 @@
-import { SiteWatcher } from "../lib/storage";
+import { SiteWatcher } from "../lib/watcher";
 
 console.log("running tsugi background worker..");
 

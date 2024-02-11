@@ -87,8 +87,11 @@ export class SiteWatcher {
     if (suffixIndex) {
       title = title.substring(0, suffixIndex).trim();
     }
-    const prefixIndex = /watch/dgim.exec(title)?.index;
-    if (prefixIndex) {
+    const prefixIndicies = /watch/dgim.exec(title)?.indices;
+    if (prefixIndicies) {
+      // these are start and end indicies of matching groups, so start from
+      // the last one of the prefix
+      const prefixIndex = prefixIndicies[0][1];
       title = title.substring(prefixIndex).trim();
     }
 

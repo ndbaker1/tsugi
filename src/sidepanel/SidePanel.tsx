@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./SidePanel.css";
-import { ChromeStore, Shows } from "../lib/storage";
+import { ChromeStore, Shows } from "../lib/watcher";
 
 const store = new ChromeStore();
 
@@ -32,8 +32,8 @@ export const SidePanel = () => {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4 md:p-6">
       {Object.entries(shows).map(([name, show]) => (
-        <div className="grid rounded-lg" style={{ backgroundColor: "#9C88E2" }}>
-          <div className="grid grid-cols-2 gap-1 p-1">
+        <div className="grid rounded-lg">
+          <div className="grid grid-cols-2 gap-1 p-1 rounded-t-lg" style={{ backgroundColor: "#9C88E2" }}>
             <button
               type="button"
               className="rounded-lg p-1 flex items-center justify-center bg-black bg-opacity-50 transition-bg-opacity duration-200 hover:bg-opacity-90"
