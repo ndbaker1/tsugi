@@ -7,7 +7,7 @@
 <p align="center">A site-agnostic show tracking extension</p>
 <p align="center"><i>tsugi meaning "next"</i></p>
 
-## Building
+## ⚒️ Building
 
 to build the extension and load it locally, run
 ```bash
@@ -16,12 +16,12 @@ npm run build
 ```
 
 This will output the extension content into a folder named `build`, which is
-ready to be loaded into chrome on the chrome://extensions page.
+ready to be loaded into chrome on the `chrome://extensions` page.
 
-## Quick Start
+## ⚡ Quick Start
 
-If it's too much of a chore to clone and build the project, you can always open the 
-repo up in a github codespace and run
+If it's too much of a chore to clone the project locally, you can always open
+up a github codespace and run
 ```bash
 npm install
 npm run pack
