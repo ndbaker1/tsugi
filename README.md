@@ -18,12 +18,6 @@ npm run build
 This will output the extension content into a folder named `build`, which is
 ready to be loaded into chrome on the `chrome://extensions` page.
 
-## ⚡ Quick Start
-
-If it's too much of a chore to clone the project locally, you can always open
-up a github codespace and run
-```bash
-npm install
-npm run pack
-```
-Then all you need to do is download the file `build.zip` onto your machine 👏
+If it's too much of a chore to clone the project locally, you can always open up
+a github codespace, build it, then download the folder onto your
+machine 👏
