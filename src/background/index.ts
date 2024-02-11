@@ -8,7 +8,7 @@ chrome.sidePanel
 
 const siteWatcher = new SiteWatcher();
 
-await siteWatcher.prunePending();
+siteWatcher.prunePending();
 
 chrome.tabs.onUpdated.addListener((_tabId, changeInfo, tab) => {
   if (changeInfo.status === "complete") {
