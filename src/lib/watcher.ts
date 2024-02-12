@@ -45,20 +45,6 @@ export class ChromeStore implements ShowStore {
   }
 }
 
-function notify(message: string) {
-  const extensionId = "cafkiphkjomhpipkggdngopcmefdkbda";
-  chrome.notifications.create(
-    extensionId,
-    {
-      type: "basic",
-      iconUrl: `chrome-extension://${extensionId}/icons/logo.ico`,
-      title: "Show update",
-      message: message,
-    },
-    console.log,
-  );
-}
-
 export class SiteWatcher {
   constructor(private store: ShowStore = new ChromeStore()) { }
 
@@ -73,7 +59,7 @@ export class SiteWatcher {
 
   private extractEpisode(info: SiteInfo): number {
     const r = /episode[\s-_]*(\d+)/gim;
-    const matches = r.exec(info.url);
+    const matches = r.exec(info.title);
     if (matches) {
       return parseInt(matches[1]);
     }
@@ -113,7 +99,6 @@ export class SiteWatcher {
         console.log("found match for:", showName);
 
         if (showInfo.pending) {
-          notify(`Adding ${showName} to your show list!`);
           showInfo.pending = false;
         }
 
