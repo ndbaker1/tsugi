@@ -59,9 +59,11 @@ export class SiteWatcher {
 
   private extractEpisode(info: SiteInfo): number {
     const r = /episode[\s-_]*(\d+)/gim;
-    const matches = r.exec(info.title);
-    if (matches) {
-      return parseInt(matches[1]);
+    for (const episodeSource of [info.title, info.url]) {
+      const matches = r.exec(episodeSource);
+      if (matches) {
+        return parseInt(matches[1]);
+      }
     }
     return -1;
   }
